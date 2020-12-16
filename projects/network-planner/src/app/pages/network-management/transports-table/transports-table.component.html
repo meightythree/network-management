@@ -1,0 +1,49 @@
+<table
+  mat-table
+  matSort
+  [dataSource]="transports$ | async"
+  (matSortChange)="sortTransports($event)"
+>
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header="name">Name</th>
+    <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="originLocationId">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header="origin">Origin</th>
+    <td mat-cell *matCellDef="let element">{{ element.origin.name }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="destinationLocationId">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header="destination">
+      Destination
+    </th>
+    <td mat-cell *matCellDef="let element">
+      {{ element.destination.name }}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="cost">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header="cost">Cost (EUR)</th>
+    <td mat-cell *matCellDef="let element">{{ element.cost }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="weight">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header="weight">
+      Weight (KG)
+    </th>
+    <td mat-cell *matCellDef="let element">{{ element.weight }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="createdAt">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header="createdAt">
+      Created At
+    </th>
+    <td mat-cell *matCellDef="let element">
+      {{ element.createdAt | date: "YYYY-MM-dd hh:mm" }}
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>

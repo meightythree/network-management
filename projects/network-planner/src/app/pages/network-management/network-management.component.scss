@@ -1,0 +1,5 @@
+@import "shared/styles/variables/spacing.scss";
+
+.container > * {
+  margin-bottom: $spacing20 !important;
+}

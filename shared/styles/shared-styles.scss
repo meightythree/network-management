@@ -1,0 +1,21 @@
+@import "./elements/table.scss";
+@import "./elements/headings.scss";
+@import "./elements/buttons.scss";
+
+@import "./variables/font-size.scss";
+@import "./variables/colors.scss";
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: $spacing30 $spacing40 0 $spacing40;
+}
+
+body [class^="mat-"],
+body [class*=" mat-"] {
+  font-family: "OpenSans-Regular";
+  font-size: $fontSize16;
+  color: $primaryGrey;
+}

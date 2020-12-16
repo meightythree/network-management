@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../../../shared/styles/shared-styles.scss";
+
+@font-face {
+  font-family: OpenSans-Regular;
+  src: local("OpenSans-Regular"),
+    url(./assets/fonts/open-sans/OpenSans-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: OpenSans-SemiBold;
+  src: local("OpenSans-SemiBold"),
+    url(./assets/fonts/open-sans/OpenSans-SemiBold.ttf) format("truetype");
+}

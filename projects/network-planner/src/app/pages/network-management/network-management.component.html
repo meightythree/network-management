@@ -1,0 +1,16 @@
+<div class="container">
+  <h1>Network Management</h1>
+  <mat-button-toggle-group
+    [value]="activeTable$ | async"
+    (change)="onTableToggle($event)"
+  >
+    <mat-button-toggle value="transports">Transports</mat-button-toggle>
+    <mat-button-toggle value="locations">Locations</mat-button-toggle>
+  </mat-button-toggle-group>
+  <app-transports-table
+    *ngIf="'transports' === (activeTable$ | async)"
+  ></app-transports-table>
+  <app-locations-table
+    *ngIf="'locations' === (activeTable$ | async)"
+  ></app-locations-table>
+</div>

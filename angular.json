@@ -1,0 +1,134 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "network-planner": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/network-planner",
+      "sourceRoot": "projects/network-planner/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/network-planner",
+            "index": "projects/network-planner/src/index.html",
+            "main": "projects/network-planner/src/main.ts",
+            "polyfills": "projects/network-planner/src/polyfills.ts",
+            "tsConfig": "projects/network-planner/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/network-planner/src/favicon.ico",
+              "projects/network-planner/src/assets"
+            ],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "projects/network-planner/src/styles.scss"
+            ],
+            "scripts": [],
+            "allowedCommonJsDependencies": ["lodash"]
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/network-planner/src/environments/environment.ts",
+                  "with": "projects/network-planner/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "network-planner:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "network-planner:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "network-planner:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/network-planner/src/test.ts",
+            "polyfills": "projects/network-planner/src/polyfills.ts",
+            "tsConfig": "projects/network-planner/tsconfig.spec.json",
+            "karmaConfig": "projects/network-planner/karma.conf.js",
+            "assets": [
+              "projects/network-planner/src/favicon.ico",
+              "projects/network-planner/src/assets"
+            ],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "projects/network-planner/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/network-planner/tsconfig.app.json",
+              "projects/network-planner/tsconfig.spec.json",
+              "projects/network-planner/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/network-planner/e2e/protractor.conf.js",
+            "devServerTarget": "network-planner:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "network-planner:serve:production"
+            }
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "network-planner",
+  "cli": {
+    "analytics": "ddc55bce-fcb7-49fe-98fb-300733bd21c5"
+  }
+}

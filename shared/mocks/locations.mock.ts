@@ -1,0 +1,58 @@
+import { Location } from "../api/network-management/network-management.interface";
+
+export const locations: Location[] = [
+  {
+    id: 1,
+    name: "London",
+    latitude: 51.88452,
+    longitude: 0.236382,
+    address: "Bassingbourn Rd, Stansted CM24 1QW, Great-Britain",
+    createdAt: new Date("2019-11-16T00:00:00"),
+    userId: 1,
+  },
+  {
+    id: 2,
+    name: "Berlin",
+    latitude: 52.373295,
+    longitude: 13.506701,
+    address: "12529 Schönefeld, Germany",
+    createdAt: new Date("2020-01-16T00:00:00"),
+    userId: 1,
+  },
+  {
+    id: 3,
+    name: "Ankara",
+    latitude: 40.124043,
+    longitude: 32.991665,
+    address: "Balıkhisar Mh., Özal Bulvarı, Ankara, Turkey ",
+    createdAt: new Date("2008-07-15T00:00:00"),
+    userId: 1,
+  },
+  {
+    id: 4,
+    name: "Budapest",
+    latitude: 47.437627,
+    longitude: 19.252276,
+    address: "Budapest, 1185, Hungary",
+    createdAt: new Date("2011-07-12T00:00:00"),
+    userId: 1,
+  },
+  {
+    id: 5,
+    name: "Liege",
+    latitude: 50.640942,
+    longitude: 5.447965,
+    address: "Rue de l’Aéroport, 4460 Grâce-Hollogne, Belgium",
+    createdAt: new Date("2007-05-24T00:00:00"),
+    userId: 1,
+  },
+  {
+    id: 6,
+    name: "Bucharest",
+    latitude: 44.569966,
+    longitude: 26.081816,
+    address: "Calea Bucureştilor 224E, Otopeni 075150, Romania",
+    createdAt: new Date("2020-01-23T00:00:00"),
+    userId: 1,
+  },
+];

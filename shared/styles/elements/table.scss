@@ -1,0 +1,11 @@
+@import "../variables/spacing.scss";
+@import "../variables/colors.scss";
+
+thead tr {
+  background-color: $primaryBlue !important;
+}
+
+.mat-header-cell,
+.mat-cell {
+  padding-right: $spacing20 !important;
+}
